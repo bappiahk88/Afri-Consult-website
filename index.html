@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AfriAI Consulting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="hero">
+    <h1>Transform Africa with the Power of AI</h1>
+    <p>Empowering businesses with innovative AI & ML solutions tailored to Africa's needs.</p>
+
+    <!-- Add the image here -->
+    <img src="AI-Africa.png" alt="Africa AI Representation" class="hero-image">
+
+    <button id="learnMore">Learn More</button>
+  </header>
+
+  <!-- YouTube Video Section -->
+  <section class="case-study-video">
+    <h2>See How We Transform Agriculture</h2>
+    <!-- Embed YouTube Video -->
+    <div class="youtube-video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/HHVMm7aQ1G0" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Our Services</h2>
+    <div class="feature-item">
+      <a href="personalized-solutions.html">
+        <img src="Personalized solutions.png" alt="Personalized AI Solutions" class="service-icon">
+        <p>Personalized AI Solutions</p>
+      </a>
+    </div>
+    <div class="feature-item">
+      <a href="scalable technologies.html">
+        <img src="scalable tech 2.png" alt="Scalable Technologies" class="service-icon">
+        <p>Scalable Technologies</p>
+      </a>
+    </div>
+
+    <div class="feature-item">
+      <img src="impactful results.png" alt="Impactful Results" class="service-icon">
+      <p>Impactful Results</p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:bappiah-korang@alumni.alusb.com" method="post" enctype="text/plain">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="industry">Industry:</label>
+      <select id="industry" name="industry">
+        <option value="healthcare">Healthcare</option>
+        <option value="agriculture">Agriculture</option>
+        <option value="finance">Finance</option>
+        <option value="education">Education</option>
+      </select>
+
+      <p id="industryInfo"></p>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Background Music -->
+  <audio id="background-music" autoplay loop>
+    <source src="Digital Dawn.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    // Automatically play the background music on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const audio = document.getElementById('background-music');
+      audio.play().catch(error => {
+        console.log("Autoplay blocked: ", error);
+      });
+    });
+  </script>
+
+  <!-- Music Controls -->
+  <div class="music-controls">
+    <button id="toggle-music">Mute</button>
+    <label for="volume-control">Volume:</label>
+    <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.5">
+  </div>
+
+  <!-- JavaScript for Music Controls -->
+  <script>
+    const audio = document.getElementById('background-music');
+    const toggleButton = document.getElementById('toggle-music');
+    const volumeControl = document.getElementById('volume-control');
+
+    // Mute/Unmute Toggle
+    toggleButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        toggleButton.textContent = 'Mute';
+      } else {
+        audio.pause();
+        toggleButton.textContent = 'Unmute';
+      }
+    });
+
+    // Volume Control
+    volumeControl.addEventListener('input', (event) => {
+      audio.volume = event.target.value;
+    });
+  </script>
+</body>
+
+</html>
